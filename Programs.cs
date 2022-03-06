@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ConsoleApp.Implements;
+using ConsoleApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -12,8 +14,12 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Assembly info = typeof(int).Assembly;
-            Console.WriteLine(info);
+            var flyWithWings = new FlyWithWings();
+            var quack = new MuteQuack();
+            var mallardDuck = new MallardDuck(flyWithWings, quack);
+
+            mallardDuck.PerformQuack();
+            mallardDuck.PerformFly();
         }
     }
 }
