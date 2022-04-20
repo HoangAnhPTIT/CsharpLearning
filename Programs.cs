@@ -1,4 +1,5 @@
-﻿using ConsoleApp.Implements;
+﻿using ConsoleApp.Geometry;
+using ConsoleApp.Implements;
 using ConsoleApp.Models;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,9 @@ namespace ConsoleApp
 {
     public class Programs
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            var flyWithWings = new FlyWithWings();
-            var quack = new MuteQuack();
-            var mallardDuck = new MallardDuck(flyWithWings, quack);
-
-            mallardDuck.PerformQuack();
-            mallardDuck.PerformFly();
+            await Process.PointInsidePolygon();
         }
     }
 }
